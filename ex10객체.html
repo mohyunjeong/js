@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체</title>
+</head>
+<body>
+    <script>
+        // 객체 -> 여러 데이터를 담는 데이터 바구니(딕셔너리)
+        // 기본 구조 -> Key : Value
+        // 장점 : key 값을 꺼냈을 때 무슨 데이터인지 유추할 수 있다
+        //  -> 여러 의미를 가진 데이터를 담아줄 수 있다 <-> 배열
+        // 사람 객체를 생성 -> 이름, 나이, 성별
+        // person = [모현정, 24, 여자]
+        let person = {
+            이름 : '모현정',
+            나이 : 24,
+            성별 : '여자',
+            학교 : ['도화초', '고흥여중', '고흥고', {학번 : 20, 학과 : '전자상거래학과'}]
+        }
+
+        // 조회 하는 방법 ! 객체이름.Key
+        person.이름
+        // person['이름'] -> 이 방법도 되긴 하나, 사용 X
+
+        // 객체 데이터를 조회할 때는 두가지만 기억할 것!
+        // 데이터의 구조가 아무리 복잡해도 객체 -> key, 배열 -> 인덱스
+        person.학교[3].학과
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영화 API</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <div id="txt"></div>
+    <button id="btn">영화 데이터 요청</button>
+
+    <script>
+        // 버튼을 클릭 했을 때 API 정보를 받아와서, div 영역에 출력
+        $('#btn').on('click', function () {
+            // alert('버튼 연결');
+            // 제이쿼리의 ajax 문법을 통해서 서버와 클라이언트 통신 코드
+            $.ajax({ // 클라이언트 - 서버 비동기 통신 기술
+                // 1. 필수 -> 요청을 보낼 주소를 작성 url
+                url: 'http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=cd7e23e9666cffc0b09e7b4a223ba8c4&targetDt=20240330',
+
+                // 2. 데이터의 전송 방식(get, post)
+                // get -> url을 통해서 데이터를 주고 받는 경우
+                // post -> 정보가 url에 노출되지 않는 경우
+                type: 'get',
+
+                // 3. 데이터를 전송하는 공간 -> 클라이언트가 서버에게 데이터를 전송하는 경우
+                // data: '전송할 데이터',
+
+                // 4. 응답받은 데이터를 처리하는 공간 2가지 (성공, 실패)
+                success : function(res) {
+                    // 성공했을 때 처리할 로직
+                    // 1. 응답 받은 데이터를 조회
+                    // JSON 데이터 조회 -> 객체 형태 데이터
+                    // 객체 -> 이름.key / 배열 -> 이름[i]
+                    console.log(res.boxOfficeResult.dailyBoxOfficeList[0].movieNm);
+
+                    // 2가지 출력 (영화 순위, 영화 개봉일자)
+                    console.log(res.boxOfficeResult.dailyBoxOfficeList[0].openDt); // 영화 개봉일자
+                    console.log(res.boxOfficeResult.dailyBoxOfficeList[0].rank); // 영화 순위
+
+                    // 모든 영화 정보를 출력(이름, 순위, 개봉일자)
+                    let str = ''
+                    for(let i = 0; i< res.boxOfficeResult.dailyBoxOfficeList.length;i++){
+                        // // console.log(res.boxOfficeResult.dailyBoxOfficeList[i].movieNm);
+                        // // console.log(res.boxOfficeResult.dailyBoxOfficeList[i].rank);
+                        // // console.log(res.boxOfficeResult.dailyBoxOfficeList[i].openDt);
+                        // $('#txt').append('<span>영화 이름 : ' + res.boxOfficeResult.dailyBoxOfficeList[i].movieNm + '</span>');
+                        // $('#txt').append('<span>영화 순위 : ' + res.boxOfficeResult.dailyBoxOfficeList[i].rank + '</span>');
+                        // $('#txt').append('<span>영화 개봉일자 : ' + res.boxOfficeResult.dailyBoxOfficeList[i].openDt + '</span>');
+                        // $('#txt').append('<br>')
+                        str += `
+                        <span>영화 순위 : ${res.boxOfficeResult.dailyBoxOfficeList[i].rank}</span>
+                        <span>영화 이름 : ${res.boxOfficeResult.dailyBoxOfficeList[i].movieNm}</span>
+                        <span>영화 개봉일자 : ${res.boxOfficeResult.dailyBoxOfficeList[i].openDt}</span>
+                        <br>
+                        `;
+                    }
+                    $('#txt').append(str);
+                },
+                error : function() {
+                    alert('실패');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

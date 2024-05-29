@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문</title>
+</head>
+<body>
+    <script>
+        // 조건문 -> if, else if, else, swtich
+        let num = 10
+        if (num > 10) {
+            console.log('10보다 큽니다!')
+        } else if (num < 10) {
+            console.log('10보다 작습니다!')
+        } else {
+            console.log('같습니다')
+        }
+
+        // 실습
+        // 1. 사용자에게 숫자를 입력 받기
+        // 2. 조건문 -> 사용자가 입력한 숫자가 22라면 -> 인증 성공 알림 alert
+        // 2-1. 사용자가 0을 입력하면 -> 상담원 연결 알림
+        // 2-2. 사용자가 입력한 숫자가 22를 제외한 다른 숫자 -> 인증 실패 알림
+        let inp = Number(prompt('숫자를 입력 : '))
+        if (inp == 22) {
+            alert('인증 성공')
+        } else if (inp == 0) {
+            alert('상담원 연결')
+        } else {
+            alert('인증 실패')
+        }
+
+        // switch -> 조건문을 작성할 때 값을 비교하는 방법
+        switch (inp) {
+            case 22 :
+                alert('인증 성공')
+                break
+            case 0 :
+                alert('상담원 연결')
+                break
+            default :
+                alert('인증 실패')
+                break
+        }
+    </script>
+</body>
+</html>

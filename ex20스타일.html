@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타일</title>
+</head>
+<body>
+    <h1 id="txt">스타일 변경 텍스트</h1>
+    <button id="btn">스타일 변경!</button>
+
+    <script>
+        // style 객체에 접근해서 변경 가능
+        // 단점 -> 코드가 노출, 유지보수가 매우 불편
+        // 프로세스
+        // 1. 함수를 제작 -> 버튼에 연결
+        // 2. 로직 작성 -> h1 태그의 스타일 변경
+        function change() {
+            //  console.log(document.getElementById('txt').style)
+            document.getElementById('txt').style.color = 'red';
+            document.getElementById('txt').style.fontSize = '100px';
+            // 스타일을 한번에 문자 형태로 작성 cssText키 활용
+            // document.getElementById('txt').style.cssText = 'color: red; font-size: 10px;'
+        };
+        document.getElementById('btn').addEventListener('click', change);
+
+        // document.getElementById("btn").addEventListener("click", function() {
+        //    alert(document.getElementById("txt").value);
+        // });
+    </script>
+</body>
+</html>

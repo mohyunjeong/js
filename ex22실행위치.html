@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실행 위치</title>
+</head>
+<body>
+    <button id="btn">버튼</button>
+    <script>
+        // 자바 스크립트 실행 -> 1. 내부, 2. 인라인, 3. 외부
+
+        // 1. 내부 -> HTML 파일 안에 <script> 태그를 통해서 js 기능을 정의
+        // 단점 -> 보안에 취약(개발자 도구에 코드가 등장), 유지보수 매우 불편
+        // 언제? 로컬 개발 할 때, 빠르게 코드를 작성할 때 -> 완성이 되면 파일로 분리
+
+        // 2. 인라인 -> 태그 안에 직접 속성으로 작성하는 방법
+        // 단점 -> 보안에 취약, 유지보수 불편
+        // 언제? 내장 함수 등 간단한 함수를 작성할 때 사용
+
+        // 3. 외부 -> HTML 파일과 js 파일을 분리해서 사용하는 방법
+        // 장점 -> 보안에 강함, 유지보수 편리
+        // 언제? 실제 서버에 배포할 때, 코드가 완성된 경우
+        // 주의점! <script src="파일경로"> 코드 작성 금지!
+    </script>
+    <script src="main.js"></script>
+</body>
+</html>

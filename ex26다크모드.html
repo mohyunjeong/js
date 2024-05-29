@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다크모드</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body class="default">
+    <h1>다크모드 텍스트</h1>
+    <button id="btn">다크모드 변경</button>
+    <script>
+        // 기본 바디 태그의 배경색을 조회
+        console.log($('body').css('background-color'));
+
+        // 1. 버튼을 클릭했을 때 배경색을 검은색, 글자색을 하얀색
+        // $('#btn').on('click', function() {
+        //     // 조건 -> 배경이 흰색이면 검은색으로 or 배경이 검은색이면 흰색으로 변경
+        //     // if ($('body').css('background-color') == 'rgba(0, 0, 0, 0)' || $('body').css('background-color') == 'rgba(0, 0, 0)') {
+        //     //     $('body').css('background-color', 'black');
+        //     //     $('h1').css('color', 'white');
+        //     //     console.log('if문', $('body').css('background-color'));
+
+        //     // } else {
+        //     //     $('body').css('background-color', 'white');
+        //     //     $('h1').css('color', 'black');
+        //     //     console.log('else문', $('body').css('background-color'));
+
+        //     // }
+        //     if ($('body').css('background-color') == 'rgba(0, 0, 0, 0)') {
+        //         $('body').css('background-color', 'black');
+        //         $('h1').css('color', 'white');
+        //         console.log('if문', $('body').css('background-color'));
+
+        //     } else {
+        //         $('body').css('background-color', 'rgba(0, 0, 0, 0)');
+        //         $('h1').css('color', 'black');
+        //         console.log('else문', $('body').css('background-color'));
+
+        //     }
+        // });
+
+        //기본 바디태그의 배경색을 조회
+        console.log($("body").css("background-color"));
+        //1. 버튼을 클릭했을 때 배경색을 검은색, 글자색 하얀색
+        $("#btn").on("click", function () {
+            // 조건 -> 배경이 흰색이면 검은색으로 or 배경이 검은색이면 흰색으로 변경
+            if (
+                $("body").css("background-color") == "rgba(0, 0, 0, 0)" ||
+                $("body").css("background-color") == "rgb(255, 255, 255)"
+            ) {
+                console.log("이프문", $("body").css("background-color"));
+                $("body").css("background-color", "black");
+                $("h1").css("color", "white");
+            } else {
+                $("body").css("background-color", "white");
+                $("h1").css("color", "black");
+                console.log("엘스문", $("body").css("background-color"));
+            }
+        });
+
+
+
+        // 클래스 값을 변경해서 디자인을 제어
+        // 버튼을 클릭할 때마다 클래스 변경
+        // 만약에 바디 태그가 클래스 값이 default라면 -> darkmode로 변경
+        // 바디 태그의 클래스 값이 darkmode라면 -> default로 변경
+
+        // 디자인 변경 방법 2가지
+        // 1. 직접 스타일을 제어하는 방법 -> $('요소').css('스타일', '값');
+        //  - 하나의 태그에 스타일을 제어할 땐 좋으나
+        //     여러 스타일, 여러 태그를 작성하면 코드 양이 늘어난다.
+        //  - 보안에 취약
+        //  - 언제?
+        //      -> 간단한(1~2개 정도) 스타일 제어할 땐 활용
+        //      -> 메뉴바를 숨기고 보이고
+
+        // 2. 클래스를 변경해서 제어하는 방법
+        //  -> hasClass, removeClass, addClass를 통해서 제어
+        //      - 클래스 값을 변경해서 CSS 파일 내 작성된 디자인 코드를 가져온다.
+        //      - 많은 양의 디자인 수정에 매우 용이하다.
+        //      - 언제? -> 많은 양의 디자인 코드를 수정하는 경우에 사용
+        //      - 주의점! 클래스를 추가할 때 반드시 기존 클래스를 제거
+        $('#btn').on('click', function () {
+            if ($('body').hasClass('default')) { // class의 유무 확인(has)
+                $('body').removeClass('default'); // remove 지워줘야함
+                $('body').addClass('darkmode'); // add는 더하기만 함
+            } else {
+                $('body').removeClass('darkmode');
+                $('body').addClass('default');
+            };
+        });
+    </script>
+</body>
+
+</html>

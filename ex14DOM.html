@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <p id="txt"><span>p태그의 컨텐츠</span></p>
+    <button id="btn" onclick="printPtag()">데이터 출력</button>
+    <script>
+        // 내가 보는 문서에서 아이디가 txt인 요소를 가져와줘!
+        // 1. 요소를 수집할 때 document.getElement(s)By구분자("값")
+        console.log(document.getElementById("txt"))
+
+        // 2. 요소 안에 글자 정보만 수집
+        // innerHTML vs innerText
+        // innerHTML -> 태그 정보를 인식
+        // innerText -> 태그 정보를 인식하지 못한다!
+        console.log(document.getElementById("txt").innerHTML)
+        console.log(document.getElementById("txt").innerText)
+
+        // 3. 요소 안의 글자 정보를 수정
+        document.getElementById("txt").innerHTML = "<h1>변경할 데이터<h1>"
+            // -> h1 태그 인식!
+        document.getElementById("txt").innerText = "<h1>변경할 데이터<h1>"
+            // -> 출력문 그대로 출력!
+
+        // 4.요소를 수집해서 alert 창으로 출력해주는 함수
+        const printPtag = () => {
+            alert(document.getElementById("txt").innerText)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리</title>
+</head>
+<body>
+    <h1 id="txt">수집할 텍스트</h1>
+
+    <script src="jquery-3.7.1.min.js"> </script>
+    <script>
+        // 1. 요소 접근
+        // 제이쿼리 -> $('요소 선택자') -> 선택자는 .(class)이나 #(id) 포함!
+        let js = document.getElementById('txt');
+        console.log(js);
+
+        let jq = $('#txt');
+        console.log(jq);
+
+        // 2. 컨텐츠(텍스트)를 수집
+        document.getElementById('txt').innerText;
+        let jq_text = $('#txt').text();
+        console.log(jq_text);
+
+        // 3. 컨텐츠를 수정
+        //  - 텍스트 수정 .text('변경할 데이터')
+        //  - 태그를 포함 수정 .html('<태그>내용</태그>')
+        document.getElementById('txt').innerText = '변경';
+        $('#txt').text('<span>제이쿼리로 수정</span>');
+        $('#txt').html('<span>제이쿼리로 수정</span>');
+
+        // 4. 스타일 변경
+        document.getElementById('txt').style.color = 'red';
+        $('#txt').css('color', 'blue');
+        $('#txt').css('font-size', '50px');
+        // 복수 스타일 제어
+        $('#txt').css({
+            color : 'pink',
+            fontSize : '100px'
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+- 도메인
+http://127.0.0.1:5500
+
+- 키 값(영화)
+cd7e23e9666cffc0b09e7b4a223ba8c4
+
+- url 주소
+http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=cd7e23e9666cffc0b09e7b4a223ba8c4&targetDt=20240330
+
+- 카카오 API 키 값
+79ea4d436df9b5821068c8a680f88302

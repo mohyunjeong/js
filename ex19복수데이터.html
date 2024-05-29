@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>복수 데이터</title>
+</head>
+<body>
+    <p class="pTag">p태그1</p>
+    <p class="pTag">p태그2</p>
+    <p class="pTag">p태그3</p>
+
+    <script>
+        // 모든 p태그의 컨텐츠 수집 -> 출력
+        // 1. 복수개의 데이터를 요청하면
+        //  -> 리턴 데이터도 반드시 복수(HTMLConllection -> 유사배열)
+        // 2. 배열 특성을 가지고 있기 때문에 접근 할 때 반드시 인덱스 활용할 것
+        // 3. 모든 데이터를 출력하는 경우에는 반복문(for)을 활용하기!
+        let data = document.getElementsByClassName('pTag')
+        for(let i = 0; i < data.length; i++) {
+            console.log(data[i].innerHTML)
+        }
+    </script>
+</body>
+</html>

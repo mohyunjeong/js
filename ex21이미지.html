@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지</title>
+</head>
+<body>
+    <img id="img" src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzExMjJfMjg3%2FMDAxNzAwNjM5MjkyMzEx.Edse9VlmXaPG6eqgpK0hSjNCbh3ERjg-HiYk733rPfog.m85iLEytrHFefsMGrzR70QK2u-_4FTFxFwsZcWypaXAg.PNG.johnmyhre%2Fimage.png&type=sc960_832">
+    <br>
+    <button id="btn">이미지 변경</button>
+
+    <script>
+        function change() {
+            document.getElementById('img').getAttribute('src')
+            document.getElementById('img').src = 'https://search.pstatic.net/common/?src=http%3A%2F%2Fimgnews.naver.net%2Fimage%2F5351%2F2023%2F01%2F02%2F0000101960_002_20230102102602117.jpg&type=sc960_832'
+        };
+        document.getElementById('btn').addEventListener('click', change)
+    </script>
+</body>
+</html>

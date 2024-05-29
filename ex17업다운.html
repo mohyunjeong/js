@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⭐⭐⭐⭐⭐업다운⭐⭐⭐⭐⭐</title>
+</head>
+<body>
+    <p id="number">0</p>
+    <button id="btn1">+1 증가</button>
+    <button id="btn2">-1 감소</button>
+
+    <script>
+        // 프로세스
+        // 1. 각각 버튼의 연결 시켜줄 함수 2개 제작
+        // 2. 버튼의 각각 함수를 연결
+        // 3. + 버튼을 클릭할 때 마다, p 태그의 내용을 가지고 와서 1씩 증가
+        // 4. - 버튼을 클릭할 때 마다, p 태그의 내용을 가지고 와서 1씩 감소
+        // 단! 0인 경우에는 더이상 감소하지 않게
+
+        // // 내 풀이방법
+        // function plus() {
+        //     document.getElementById("number").innerText = Number(document.getElementById("number").innerText) + 1;
+        // }
+        // function minus() {
+        //     m = Number(document.getElementById('number').innerText)
+        //     if (m == 0) {
+        //         m = 0
+        //     } else {
+        //         document.getElementById("number").innerText = Number(document.getElementById("number").innerText) - 1;
+        //     }
+        // }
+        // document.getElementById("btn1").addEventListener("click", plus);
+        // document.getElementById("btn2").addEventListener("click", minus);
+
+        // 선생님 풀이방법
+        let data = Number(document.getElementById("number").innerText);
+        function plus() {
+            document.getElementById("number").innerText = ++data;
+        }
+        function minus() {
+            data <= 0 ? document.getElementById('number').innerHTML = 0 : document.getElementById('number').innerHTML = --data
+        }
+        document.getElementById("btn1").addEventListener("click", plus);
+        document.getElementById("btn2").addEventListener("click", minus);
+    </script>
+</body>
+</html>

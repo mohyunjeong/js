@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인풋</title>
+</head>
+<body>
+    <input type="text" id="txt">
+    <button id="btn">인풋값 수집</button>
+
+    <script>
+        // input 태그의 데이터는 value 속성 안에 저장이 된다 ⭐
+        // input 태그는 반드시 value, name의 역할을 기억
+        // value -> 선택, 입력한 값들이 저장되는 공간(text, password는 제외!)
+        // name -> 값을 구분지어 주는 key 역할
+        //  -> 서버와 통신할 때 필요
+        document.getElementById('btn').addEventListener('click', function() {
+            alert(document.getElementById('txt').value)
+        })
+    </script>
+</body>
+</html>
